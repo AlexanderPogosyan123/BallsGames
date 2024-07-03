@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             button = new Button();
             button1 = new Button();
             moveButton = new Button();
-            timer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // button
             // 
-            button.Location = new Point(140, -19);
+            button.Location = new Point(135, 12);
             button.Name = "button";
             button.Size = new Size(94, 29);
             button.TabIndex = 0;
@@ -65,10 +63,6 @@
             moveButton.UseVisualStyleBackColor = true;
             moveButton.Click += moveButton_Click;
             // 
-            // timer
-            // 
-            timer.Tick += timer_Tick;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -90,6 +84,5 @@
         private Button button;
         private Button button1;
         private Button moveButton;
-        private System.Windows.Forms.Timer timer;
     }
 }
