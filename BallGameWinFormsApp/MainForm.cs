@@ -10,6 +10,7 @@ namespace BallGameWinFormsApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            stopButton.Enabled = false;
 
         }
 
@@ -23,6 +24,8 @@ namespace BallGameWinFormsApp
                 moveBalls.Add(ball);
                 moveBalls[i].Start();
             }
+
+            stopButton.Enabled = true;
         }
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
@@ -31,6 +34,12 @@ namespace BallGameWinFormsApp
             pointBall.Show();
         }
 
-
+        private void stopButton_Click(object sender, EventArgs e)
+        {
+            for (int i = 0;i < moveBalls.Count;i++)
+            {
+                moveBalls[i].Stop();
+            }
+        }
     }
 }

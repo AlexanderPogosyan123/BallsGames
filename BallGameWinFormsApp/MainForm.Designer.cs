@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             createButton = new Button();
+            stopButton = new Button();
             SuspendLayout();
             // 
             // createButton
             // 
-            createButton.Location = new Point(375, 12);
+            createButton.Location = new Point(42, 12);
             createButton.Name = "createButton";
             createButton.Size = new Size(223, 29);
             createButton.TabIndex = 1;
@@ -41,12 +42,23 @@
             createButton.UseVisualStyleBackColor = true;
             createButton.Click += createButton_Click;
             // 
+            // stopButton
+            // 
+            stopButton.Location = new Point(298, 12);
+            stopButton.Name = "stopButton";
+            stopButton.Size = new Size(223, 29);
+            stopButton.TabIndex = 2;
+            stopButton.Text = "Остановить";
+            stopButton.UseVisualStyleBackColor = true;
+            stopButton.Click += stopButton_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(800, 450);
+            Controls.Add(stopButton);
             Controls.Add(createButton);
             Name = "MainForm";
             Text = "Balls";
@@ -57,5 +69,6 @@
 
         #endregion
         private Button createButton;
+        private Button stopButton;
     }
 }
