@@ -28,40 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button = new Button();
-            button1 = new Button();
-            moveButton = new Button();
+            createButton = new Button();
             SuspendLayout();
             // 
-            // button
+            // createButton
             // 
-            button.Location = new Point(135, 12);
-            button.Name = "button";
-            button.Size = new Size(94, 29);
-            button.TabIndex = 0;
-            button.Text = "Рисовать шарик";
-            button.UseVisualStyleBackColor = true;
-            button.Click += button_Click;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(375, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(223, 29);
-            button1.TabIndex = 1;
-            button1.Text = "Рисовать случайный  шарик";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // moveButton
-            // 
-            moveButton.Location = new Point(624, 12);
-            moveButton.Name = "moveButton";
-            moveButton.Size = new Size(94, 29);
-            moveButton.TabIndex = 2;
-            moveButton.Text = "Двигать";
-            moveButton.UseVisualStyleBackColor = true;
-            moveButton.Click += moveButton_Click;
+            createButton.Location = new Point(375, 12);
+            createButton.Name = "createButton";
+            createButton.Size = new Size(223, 29);
+            createButton.TabIndex = 1;
+            createButton.Text = "Создать";
+            createButton.UseVisualStyleBackColor = true;
+            createButton.Click += createButton_Click;
             // 
             // MainForm
             // 
@@ -69,9 +47,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(800, 450);
-            Controls.Add(moveButton);
-            Controls.Add(button1);
-            Controls.Add(button);
+            Controls.Add(createButton);
             Name = "MainForm";
             Text = "Balls";
             Load += MainForm_Load;
@@ -80,9 +56,6 @@
         }
 
         #endregion
-
-        private Button button;
-        private Button button1;
-        private Button moveButton;
+        private Button createButton;
     }
 }
