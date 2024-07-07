@@ -2,7 +2,8 @@ namespace BallGameWinFormsApp
 {
     public partial class MainForm : Form
     {
-        List<MoveBall> moveBalls;
+        private List<MoveBall> moveBalls;
+        private int ballsOnFormCount;
         public MainForm()
         {
             InitializeComponent();
@@ -30,16 +31,24 @@ namespace BallGameWinFormsApp
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
-            PointBall pointBall = new PointBall(this, new Point(e.X, e.Y));
-            pointBall.Show();
+            
         }
 
         private void stopButton_Click(object sender, EventArgs e)
         {
-            for (int i = 0;i < moveBalls.Count;i++)
+
+            for (int i = 0; i < moveBalls.Count; i++)
             {
                 moveBalls[i].Stop();
+                if (moveBalls[i].OnForm())
+                {
+                    ballsOnFormCount++;
+                }
             }
+
+          ballsCountLabel.Text =ballsOnFormCount+" ";
+            stopButton.Enabled = false;
+
         }
     }
 }

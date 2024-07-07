@@ -60,5 +60,10 @@ namespace BallGameWinFormsApp
             Go();
             Show();
         }
+
+        public bool OnForm()
+        {
+            return location.X > 0 && location.Y > 0 && location.X < form.ClientSize.Width - size.Width && location.Y < form.ClientSize.Height - size.Height;
+        }
     }
 }

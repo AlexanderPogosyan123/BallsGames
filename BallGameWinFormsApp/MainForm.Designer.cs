@@ -30,11 +30,13 @@
         {
             createButton = new Button();
             stopButton = new Button();
+            ballsCountLabel = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // createButton
             // 
-            createButton.Location = new Point(42, 12);
+            createButton.Location = new Point(12, 12);
             createButton.Name = "createButton";
             createButton.Size = new Size(223, 29);
             createButton.TabIndex = 1;
@@ -44,7 +46,7 @@
             // 
             // stopButton
             // 
-            stopButton.Location = new Point(298, 12);
+            stopButton.Location = new Point(271, 13);
             stopButton.Name = "stopButton";
             stopButton.Size = new Size(223, 29);
             stopButton.TabIndex = 2;
@@ -52,12 +54,32 @@
             stopButton.UseVisualStyleBackColor = true;
             stopButton.Click += stopButton_Click;
             // 
+            // ballsCountLabel
+            // 
+            ballsCountLabel.AutoSize = true;
+            ballsCountLabel.Location = new Point(720, 17);
+            ballsCountLabel.Name = "ballsCountLabel";
+            ballsCountLabel.Size = new Size(17, 20);
+            ballsCountLabel.TabIndex = 3;
+            ballsCountLabel.Text = "0";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(548, 17);
+            label2.Name = "label2";
+            label2.Size = new Size(124, 20);
+            label2.TabIndex = 4;
+            label2.Text = "Кол-во шариков";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
+            Controls.Add(ballsCountLabel);
             Controls.Add(stopButton);
             Controls.Add(createButton);
             Name = "MainForm";
@@ -65,10 +87,13 @@
             Load += MainForm_Load;
             MouseDown += MainForm_MouseDown;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private Button createButton;
         private Button stopButton;
+        private Label ballsCountLabel;
+        private Label label2;
     }
 }
