@@ -32,6 +32,7 @@
             stopButton = new Button();
             ballsCountLabel = new Label();
             label2 = new Label();
+            ClearButton = new Button();
             SuspendLayout();
             // 
             // createButton
@@ -72,12 +73,23 @@
             label2.TabIndex = 4;
             label2.Text = "Кол-во шариков";
             // 
+            // ClearButton
+            // 
+            ClearButton.Location = new Point(12, 62);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(223, 29);
+            ClearButton.TabIndex = 5;
+            ClearButton.Text = "Очистить";
+            ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(800, 450);
+            Controls.Add(ClearButton);
             Controls.Add(label2);
             Controls.Add(ballsCountLabel);
             Controls.Add(stopButton);
@@ -95,5 +107,6 @@
         private Button stopButton;
         private Label ballsCountLabel;
         private Label label2;
+        private Button ClearButton;
     }
 }

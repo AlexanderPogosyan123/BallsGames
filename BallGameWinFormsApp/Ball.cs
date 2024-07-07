@@ -44,7 +44,7 @@ namespace BallGameWinFormsApp
             location.X+=vx;
             location.Y+=vy;
         }
-        private void Clear()
+        public void Clear()
         {
             brush = Brushes.WhiteSmoke;
             //рандомно генерю цвет исходя из массива цветов
