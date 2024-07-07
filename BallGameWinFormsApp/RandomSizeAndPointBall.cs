@@ -8,7 +8,7 @@ namespace BallGameWinFormsApp
 {
     public class RandomSizeAndPointBall:RandomPointBall
     {
-        public RandomSizeAndPointBall(MainForm form):base(form)
+        public RandomSizeAndPointBall(Form form):base(form)
         {
             this.form = form;
             size.Height = random.Next(50, 200);

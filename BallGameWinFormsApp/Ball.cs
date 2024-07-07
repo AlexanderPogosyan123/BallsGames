@@ -10,7 +10,7 @@ namespace BallGameWinFormsApp
     public class Ball
     {
         //Это уже другой объект, нам нужен именно наш объект формочки чтобы на ней нарисовать шар(из-за этого мы передаем его в конструкторе)
-        protected MainForm form;
+        protected Form form;
         //установка значений по умолчанию
         protected Point location = new Point(100, 100);
         private Random random = new Random();
@@ -20,9 +20,9 @@ namespace BallGameWinFormsApp
 
         private Brush brush;
         private Brush color;
-        protected int vx = 10;
-        protected int vy = 10;
-        public Ball(MainForm form)
+        protected int vx =5;
+        protected int vy = 5;
+        public Ball(Form form)
         {
             this.form = form;
             brush = brushes[random.Next(brushes.Length)];

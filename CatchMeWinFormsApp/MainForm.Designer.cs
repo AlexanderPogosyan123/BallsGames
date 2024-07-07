@@ -42,6 +42,7 @@
             createButton.TabIndex = 0;
             createButton.Text = "Создать";
             createButton.UseVisualStyleBackColor = true;
+            createButton.Click += createButton_Click;
             // 
             // clearButton
             // 
@@ -81,6 +82,8 @@
             Controls.Add(createButton);
             Name = "MainForm";
             Text = "Form1";
+            Load += MainForm_Load;
+            MouseDown += MainForm_MouseDown;
             ResumeLayout(false);
             PerformLayout();
         }

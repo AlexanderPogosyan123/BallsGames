@@ -9,7 +9,7 @@ namespace BallGameWinFormsApp
     public class RandomPointBall:Ball
     {
         protected Random random = new Random();
-        public RandomPointBall(MainForm form):base(form)
+        public RandomPointBall(Form form):base(form)
         {
             this.form = form;
             var x = random.Next(0, form.ClientSize.Width);

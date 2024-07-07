@@ -9,7 +9,7 @@ namespace BallGameWinFormsApp
 {
     public class PointBall:Ball
     {
-        public PointBall(MainForm form,Point pointLocation):base(form)
+        public PointBall(Form form,Point pointLocation):base(form)
         {
            location = pointLocation;
         }

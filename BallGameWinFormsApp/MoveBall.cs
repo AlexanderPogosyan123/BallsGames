@@ -1,13 +1,12 @@
 ﻿
-
 using Timer = System.Windows.Forms.Timer;
 
 namespace BallGameWinFormsApp
 {
-    internal class MoveBall : RandomPointBall
+    public class MoveBall : RandomPointBall
     {
         private Timer timer;
-        public MoveBall(MainForm form) : base(form)
+        public MoveBall(Form form) : base(form)
         {
             timer = new Timer();
             timer.Interval = 10;
@@ -30,6 +29,18 @@ namespace BallGameWinFormsApp
         {
             timer.Stop();
         }
-       
+
+        public bool Consists(int pointX, int pointY)
+        {
+            var radius = size.Width/2;
+            var centerX = location.X + radius;
+            var centerY = location.Y + radius;
+            return ((centerX - pointX)* (centerX - pointX   ) + (centerY - pointY)*(centerY - pointY)) <=radius*radius;
+        }
+
+        public bool IsMovable()
+        {
+            return timer.Enabled;
+        }
     }
 }
