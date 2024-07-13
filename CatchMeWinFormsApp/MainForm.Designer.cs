@@ -1,6 +1,6 @@
 ﻿namespace CatchMeWinFormsApp
 {
-    partial class MainForm
+    partial class mainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -72,16 +72,17 @@
             ballsCountLabel.TabIndex = 6;
             ballsCountLabel.Text = "0";
             // 
-            // MainForm
+            // mainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(800, 450);
             Controls.Add(ballsCountLabel);
             Controls.Add(label2);
             Controls.Add(clearButton);
             Controls.Add(createButton);
-            Name = "MainForm";
+            Name = "mainForm";
             Text = "Form1";
             Load += MainForm_Load;
             MouseDown += MainForm_MouseDown;

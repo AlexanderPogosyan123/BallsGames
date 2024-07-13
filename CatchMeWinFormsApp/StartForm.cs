@@ -12,9 +12,21 @@ namespace CatchMeWinFormsApp
 {
     public partial class StartForm : Form
     {
+        public string Color;
         public StartForm()
         {
             InitializeComponent();
+        }
+
+        private void StartForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            Color = comboBox1.Text.Trim();
+            Close();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace BallGameWinFormsApp
         private Random random = new Random();
 
         protected Size size = new Size(50, 50);
-        private Brush[] brushes = { Brushes.Red, Brushes.Orange, Brushes.Yellow, Brushes.Black };
+        private Brush[] brushes = { Brushes.Red, Brushes.Orange, Brushes.Yellow, Brushes.Purple };
 
         private Brush brush;
         private Brush color;
@@ -46,7 +46,7 @@ namespace BallGameWinFormsApp
         }
         public void Clear()
         {
-            brush = Brushes.WhiteSmoke;
+            brush = new SolidBrush(form.BackColor);
             //рандомно генерю цвет исходя из массива цветов
             var graphics = form.CreateGraphics();
             //прямоугольник создается для площади где будет рисоваться шар
