@@ -52,6 +52,7 @@
             clearButton.TabIndex = 1;
             clearButton.Text = "Очистить";
             clearButton.UseVisualStyleBackColor = true;
+            clearButton.Click += clearButton_Click;
             // 
             // label2
             // 

@@ -5,7 +5,7 @@ namespace CatchMeWinFormsApp
     public partial class MainForm : Form
     {
         private List<MoveBall> moveBalls;
-        private int  ballsCount = 0;
+        private int ballsCount = 0;
 
 
         public MainForm()
@@ -15,7 +15,6 @@ namespace CatchMeWinFormsApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void createButton_Click(object sender, EventArgs e)
@@ -29,19 +28,41 @@ namespace CatchMeWinFormsApp
                 moveBalls[i].Start();
             }
             createButton.Enabled = false;
+
         }
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
-            foreach (var ball in moveBalls)
+            if (moveBalls != null)
             {
-                if (ball.Consists(e.X,e.Y) && ball.IsMovable()) 
+
+                foreach (var ball in moveBalls)
+                {
+                    if (ball.Consists(e.X, e.Y) && ball.IsMovable())
+                    {
+                        ball.Stop();
+                        ballsCount++;
+                    }
+                }
+                ballsCountLabel.Text = ballsCount.ToString();
+                clearButton.Enabled = true;
+            }
+
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            if (moveBalls != null)
+            {
+                foreach (var ball in moveBalls)
                 {
                     ball.Stop();
-                    ballsCount++;
+                    ball.Clear();
                 }
+                ballsCount = 0;
+                ballsCountLabel.Text = ballsCount.ToString();
+                createButton.Enabled =true;
             }
-            ballsCountLabel.Text = ballsCount.ToString();
         }
     }
 }
