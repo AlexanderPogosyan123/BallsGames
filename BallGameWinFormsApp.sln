@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BallGameWinFormsApp", "BallGameWinFormsApp\BallGameWinFormsApp.csproj", "{DCE91BE9-510F-4EF7-B295-40E69119FFF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatchMeWinFormsApp", "CatchMeWinFormsApp\CatchMeWinFormsApp.csproj", "{BE2E1FD0-D85E-4E14-AC33-99046BC06596}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatchMeWinFormsApp", "CatchMeWinFormsApp\CatchMeWinFormsApp.csproj", "{BE2E1FD0-D85E-4E14-AC33-99046BC06596}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallsWinFormsLibrary", "BallsWinFormsLibrary\BallsWinFormsLibrary.csproj", "{E9EEDA7D-582D-4104-9684-8B14A7A5DB26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BE2E1FD0-D85E-4E14-AC33-99046BC06596}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE2E1FD0-D85E-4E14-AC33-99046BC06596}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE2E1FD0-D85E-4E14-AC33-99046BC06596}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9EEDA7D-582D-4104-9684-8B14A7A5DB26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9EEDA7D-582D-4104-9684-8B14A7A5DB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9EEDA7D-582D-4104-9684-8B14A7A5DB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9EEDA7D-582D-4104-9684-8B14A7A5DB26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

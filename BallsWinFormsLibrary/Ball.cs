@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BallGameWinFormsApp
+﻿namespace BallsWinFormsLibrary
 {
     public class Ball
     {
@@ -16,11 +9,11 @@ namespace BallGameWinFormsApp
         private Random random = new Random();
 
         protected Size size = new Size(50, 50);
-        private Brush[] brushes = { Brushes.Red, Brushes.Orange, Brushes.Yellow, Brushes.Purple };
+        private Brush[] brushes = { Brushes.Brown, Brushes.Orange, Brushes.Gray, Brushes.Purple };
 
         private Brush brush;
         private Brush color;
-        protected int vx =5;
+        protected int vx = 5;
         protected int vy = 5;
         public Ball(Form form)
         {

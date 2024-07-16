@@ -1,7 +1,6 @@
-﻿
-using Timer = System.Windows.Forms.Timer;
+﻿using Timer = System.Windows.Forms.Timer;
 
-namespace BallGameWinFormsApp
+namespace BallsWinFormsLibrary
 {
     public class MoveBall : RandomPointBall
     {
@@ -36,7 +35,7 @@ namespace BallGameWinFormsApp
             var radius = size.Width/2;
             var centerX = location.X + radius;
             var centerY = location.Y + radius;
-            return ((centerX - pointX)* (centerX - pointX) + (centerY - pointY)*(centerY - pointY)) <=radius*radius;
+            return (centerX - pointX)* (centerX - pointX) + (centerY - pointY)*(centerY - pointY) <=radius*radius;
         }
 
         public bool IsMovable()
@@ -46,7 +45,7 @@ namespace BallGameWinFormsApp
 
         protected virtual void ReduceBallSize()
         {
-            
+
         }
     }
 }
