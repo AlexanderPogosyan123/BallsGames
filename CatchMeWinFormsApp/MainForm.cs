@@ -21,7 +21,7 @@ namespace CatchMeWinFormsApp
 
         }
 
-        private void createButton_Click(object sender, EventArgs e)
+        private void CreateButton_Click(object sender, EventArgs e)
         {
             moveBalls = new List<MoveBall>();
             string levelChoice = startForm.LevelChoice;
@@ -91,7 +91,7 @@ namespace CatchMeWinFormsApp
 
         }
 
-        private void clearButton_Click(object sender, EventArgs e)
+        private void ClearButton_Click(object sender, EventArgs e)
         {
             if (moveBalls != null)
             {

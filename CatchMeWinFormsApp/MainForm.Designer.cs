@@ -42,7 +42,7 @@
             createButton.TabIndex = 0;
             createButton.Text = "Создать";
             createButton.UseVisualStyleBackColor = true;
-            createButton.Click += createButton_Click;
+            createButton.Click += CreateButton_Click;
             // 
             // clearButton
             // 
@@ -52,7 +52,7 @@
             clearButton.TabIndex = 1;
             clearButton.Text = "Очистить";
             clearButton.UseVisualStyleBackColor = true;
-            clearButton.Click += clearButton_Click;
+            clearButton.Click += ClearButton_Click;
             // 
             // label2
             // 
