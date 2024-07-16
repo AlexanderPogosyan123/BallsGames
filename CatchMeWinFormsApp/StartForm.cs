@@ -3,8 +3,8 @@ namespace CatchMeWinFormsApp
 {
     public partial class StartForm : Form
     {
-        public string Color = "Белый";
-        public string LevelChoice = "Легкий";
+        public string Color;
+        public string LevelChoice;
         public StartForm()
         {
             InitializeComponent();
@@ -35,7 +35,11 @@ namespace CatchMeWinFormsApp
             {
                 return;
             }
-
+            else
+            {
+                Color = colorsComboBox.Text.Trim();
+                LevelChoice = levelsComboBox.Text.Trim();
+            }
             Hide();
         }
 
