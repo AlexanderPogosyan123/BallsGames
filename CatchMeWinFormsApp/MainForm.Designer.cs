@@ -83,7 +83,7 @@
             Controls.Add(clearButton);
             Controls.Add(createButton);
             Name = "mainForm";
-            Text = "Form1";
+            Text = "BallsGame";
             Load += MainForm_Load;
             MouseDown += MainForm_MouseDown;
             ResumeLayout(false);

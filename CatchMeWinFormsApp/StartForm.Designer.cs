@@ -104,7 +104,7 @@
             Controls.Add(colorsComboBox);
             Controls.Add(label1);
             Name = "StartForm";
-            Text = "StartForm";
+            Text = "BallsGame";
             FormClosing += StartForm_FormClosing;
             Load += StartForm_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
