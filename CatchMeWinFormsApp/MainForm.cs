@@ -5,6 +5,7 @@ namespace CatchMeWinFormsApp
     public partial class mainForm : Form
     {
         private List<MoveBall> moveBalls;
+        private StartForm startForm = new StartForm();
         private int ballsCount = 0;
 
         public mainForm()
@@ -14,47 +15,61 @@ namespace CatchMeWinFormsApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            StartForm startForm = new StartForm();
             startForm.ShowDialog();
             string color = startForm.Color;
             ChangeFormBackColor(color);
 
         }
 
-        private void ChangeFormBackColor(string color)
-        {
-            if (string.Equals(color, "÷åðíûé", StringComparison.OrdinalIgnoreCase))
-            {
-                BackColor = Color.Black;
-                label2.ForeColor = Color.White;
-                ballsCountLabel.ForeColor = Color.White;
-            }
-            else if (string.Equals(color, "áåëûé", StringComparison.OrdinalIgnoreCase))
-            {
-                BackColor = Color.White;
-            }
-            else if (string.Equals(color, "êðàñíûé", StringComparison.OrdinalIgnoreCase))
-            {
-                BackColor = Color.Red;
-            }
-            else if (string.Equals(color, "ñèíèé", StringComparison.OrdinalIgnoreCase))
-            {
-                BackColor = Color.Blue;
-            }
-        }
-
         private void createButton_Click(object sender, EventArgs e)
         {
             moveBalls = new List<MoveBall>();
-
-            for (int i = 0; i < 10; i++)
-            {
-                var ball = new MoveBall(this);
-                moveBalls.Add(ball);
-                moveBalls[i].Start();
-            }
+            string levelChoice = startForm.LevelChoice;
+            ÑreateBallsForLevelChoice(levelChoice);
             createButton.Enabled = false;
 
+        }
+
+        private void ÑreateBallsForLevelChoice(string levelChoice)
+        {
+            switch (levelChoice)
+            {
+                case "Ëåãêèé":
+                    {
+                        for (int i = 0; i < 10; i++)
+                        {
+                            var ball = new EasyBallLevel(this);
+                            moveBalls.Add(ball);
+                            moveBalls[i].Start();
+                        }
+
+                        break;
+                    }
+
+                case "Ñðåäíèé":
+                    {
+                        for (int i = 0; i < 10; i++)
+                        {
+                            var ball = new MediumBallLevel(this);
+                            moveBalls.Add(ball);
+                            moveBalls[i].Start();
+                        }
+
+                        break;
+                    }
+
+                case "Ñëîæíûé":
+                    {
+                        for (int i = 0; i < 10; i++)
+                        {
+                            var ball = new HardBallLevel(this);
+                            moveBalls.Add(ball);
+                            moveBalls[i].Start();
+                        }
+
+                        break;
+                    }
+            }
         }
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
@@ -88,6 +103,28 @@ namespace CatchMeWinFormsApp
                 ballsCount = 0;
                 ballsCountLabel.Text = ballsCount.ToString();
                 createButton.Enabled =true;
+            }
+        }
+
+        private void ChangeFormBackColor(string color)
+        {
+            if (string.Equals(color, "÷åðíûé", StringComparison.OrdinalIgnoreCase))
+            {
+                BackColor = Color.Black;
+                label2.ForeColor = Color.White;
+                ballsCountLabel.ForeColor = Color.White;
+            }
+            else if (string.Equals(color, "áåëûé", StringComparison.OrdinalIgnoreCase))
+            {
+                BackColor = Color.White;
+            }
+            else if (string.Equals(color, "êðàñíûé", StringComparison.OrdinalIgnoreCase))
+            {
+                BackColor = Color.Red;
+            }
+            else if (string.Equals(color, "ñèíèé", StringComparison.OrdinalIgnoreCase))
+            {
+                BackColor = Color.Blue;
             }
         }
     }

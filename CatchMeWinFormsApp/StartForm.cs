@@ -12,7 +12,8 @@ namespace CatchMeWinFormsApp
 {
     public partial class StartForm : Form
     {
-        public string Color;
+        public string Color = "Белый";
+        public string LevelChoice = "Легкий";
         public StartForm()
         {
             InitializeComponent();
@@ -25,7 +26,16 @@ namespace CatchMeWinFormsApp
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            Color = colorsComboBox.Text.Trim();
+            if (colorsComboBox.Text.Trim() != string.Empty)
+            {
+                Color = colorsComboBox.Text.Trim();
+
+            }
+            if (levelsComboBox.Text.Trim() != string.Empty)
+            {
+                LevelChoice = levelsComboBox.Text.Trim();
+
+            }
             Close();
         }
     }

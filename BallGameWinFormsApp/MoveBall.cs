@@ -18,6 +18,7 @@ namespace BallGameWinFormsApp
         private void Timer_Tick(object? sender, EventArgs e)
         {
             Move();
+            ReduceBallSize();
         }
 
         public void Start()
@@ -35,12 +36,17 @@ namespace BallGameWinFormsApp
             var radius = size.Width/2;
             var centerX = location.X + radius;
             var centerY = location.Y + radius;
-            return ((centerX - pointX)* (centerX - pointX   ) + (centerY - pointY)*(centerY - pointY)) <=radius*radius;
+            return ((centerX - pointX)* (centerX - pointX) + (centerY - pointY)*(centerY - pointY)) <=radius*radius;
         }
 
         public bool IsMovable()
         {
             return timer.Enabled;
+        }
+
+        protected virtual void ReduceBallSize()
+        {
+            
         }
     }
 }
