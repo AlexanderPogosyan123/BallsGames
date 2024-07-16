@@ -17,17 +17,35 @@ namespace CatchMeWinFormsApp
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            if (colorsComboBox.Text.Trim() != string.Empty)
+            bool t = true;
+
+            if (colorsComboBox.SelectedIndex == -1)
             {
-                Color = colorsComboBox.Text.Trim();
+                errorProvider1.SetError(colorsComboBox, "Выберите значение!");
+                t = false;
+            }
+            if (levelsComboBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(levelsComboBox, "Выберите значение!");
+                t = false;
 
             }
-            if (levelsComboBox.Text.Trim() != string.Empty)
+
+            if (!t)
             {
-                LevelChoice = levelsComboBox.Text.Trim();
+                return;
+            }
+
+            Hide();
+        }
+
+        private void StartForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
 
             }
-            Close();
         }
     }
 }

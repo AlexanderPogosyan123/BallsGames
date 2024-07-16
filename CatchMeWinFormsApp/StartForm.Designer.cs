@@ -28,19 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             colorsComboBox = new ComboBox();
             OkButton = new Button();
             levelsComboBox = new ComboBox();
             label2 = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label1.Location = new Point(76, 25);
             label1.Name = "label1";
-            label1.Size = new Size(205, 20);
+            label1.Size = new Size(245, 23);
             label1.TabIndex = 0;
             label1.Text = "Выберите цвет фона экрана";
             // 
@@ -55,12 +59,15 @@
             // 
             // OkButton
             // 
-            OkButton.Location = new Point(97, 266);
+            OkButton.BackColor = SystemColors.ActiveCaption;
+            OkButton.FlatStyle = FlatStyle.Popup;
+            OkButton.ForeColor = SystemColors.ActiveCaptionText;
+            OkButton.Location = new Point(340, 233);
             OkButton.Name = "OkButton";
             OkButton.Size = new Size(128, 29);
             OkButton.TabIndex = 2;
-            OkButton.Text = "Подтвердить";
-            OkButton.UseVisualStyleBackColor = true;
+            OkButton.Text = "Начать";
+            OkButton.UseVisualStyleBackColor = false;
             OkButton.Click += OkButton_Click;
             // 
             // levelsComboBox
@@ -75,17 +82,22 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 204);
             label2.Location = new Point(516, 25);
             label2.Name = "label2";
-            label2.Size = new Size(195, 20);
+            label2.Size = new Size(234, 23);
             label2.TabIndex = 5;
             label2.Text = "Выберите сложность игры";
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // StartForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(896, 463);
+            ClientSize = new Size(877, 323);
             Controls.Add(label2);
             Controls.Add(levelsComboBox);
             Controls.Add(OkButton);
@@ -93,7 +105,9 @@
             Controls.Add(label1);
             Name = "StartForm";
             Text = "StartForm";
+            FormClosing += StartForm_FormClosing;
             Load += StartForm_Load;
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -105,5 +119,6 @@
         private Button OkButton;
         private ComboBox levelsComboBox;
         private Label label2;
+        private ErrorProvider errorProvider1;
     }
 }
