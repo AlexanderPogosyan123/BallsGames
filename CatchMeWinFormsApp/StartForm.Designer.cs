@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            comboBox1 = new ComboBox();
+            colorsComboBox = new ComboBox();
             OkButton = new Button();
+            levelsComboBox = new ComboBox();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -42,14 +44,14 @@
             label1.TabIndex = 0;
             label1.Text = "Выберите цвет фона экрана";
             // 
-            // comboBox1
+            // colorsComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Черный", "Белый", "Красный", "Синий" });
-            comboBox1.Location = new Point(97, 75);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 1;
+            colorsComboBox.FormattingEnabled = true;
+            colorsComboBox.Items.AddRange(new object[] { "Черный", "Белый", "Красный", "Синий" });
+            colorsComboBox.Location = new Point(97, 75);
+            colorsComboBox.Name = "colorsComboBox";
+            colorsComboBox.Size = new Size(151, 28);
+            colorsComboBox.TabIndex = 1;
             // 
             // OkButton
             // 
@@ -61,13 +63,33 @@
             OkButton.UseVisualStyleBackColor = true;
             OkButton.Click += OkButton_Click;
             // 
+            // levelsComboBox
+            // 
+            levelsComboBox.FormattingEnabled = true;
+            levelsComboBox.Items.AddRange(new object[] { "Легкий", "Средний", "Сложный" });
+            levelsComboBox.Location = new Point(530, 75);
+            levelsComboBox.Name = "levelsComboBox";
+            levelsComboBox.Size = new Size(151, 28);
+            levelsComboBox.TabIndex = 4;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(516, 25);
+            label2.Name = "label2";
+            label2.Size = new Size(195, 20);
+            label2.TabIndex = 5;
+            label2.Text = "Выберите сложность игры";
+            // 
             // StartForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(374, 324);
+            ClientSize = new Size(896, 463);
+            Controls.Add(label2);
+            Controls.Add(levelsComboBox);
             Controls.Add(OkButton);
-            Controls.Add(comboBox1);
+            Controls.Add(colorsComboBox);
             Controls.Add(label1);
             Name = "StartForm";
             Text = "StartForm";
@@ -79,7 +101,9 @@
         #endregion
 
         private Label label1;
-        private ComboBox comboBox1;
+        private ComboBox colorsComboBox;
         private Button OkButton;
+        private ComboBox levelsComboBox;
+        private Label label2;
     }
 }

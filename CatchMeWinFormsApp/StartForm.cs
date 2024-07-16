@@ -25,7 +25,7 @@ namespace CatchMeWinFormsApp
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            Color = comboBox1.Text.Trim();
+            Color = colorsComboBox.Text.Trim();
             Close();
         }
     }

@@ -6,7 +6,6 @@ namespace CatchMeWinFormsApp
     {
         private List<MoveBall> moveBalls;
         private int ballsCount = 0;
-        private string color;
 
         public mainForm()
         {
@@ -17,26 +16,31 @@ namespace CatchMeWinFormsApp
         {
             StartForm startForm = new StartForm();
             startForm.ShowDialog();
-            color = startForm.Color;
+            string color = startForm.Color;
+            ChangeFormBackColor(color);
+
+        }
+
+        private void ChangeFormBackColor(string color)
+        {
             if (string.Equals(color, "черный", StringComparison.OrdinalIgnoreCase))
             {
                 BackColor = Color.Black;
                 label2.ForeColor = Color.White;
                 ballsCountLabel.ForeColor = Color.White;
             }
-            if (string.Equals(color, "белый", StringComparison.OrdinalIgnoreCase))
+            else if (string.Equals(color, "белый", StringComparison.OrdinalIgnoreCase))
             {
                 BackColor = Color.White;
             }
-            if (string.Equals(color, "красный", StringComparison.OrdinalIgnoreCase))
+            else if (string.Equals(color, "красный", StringComparison.OrdinalIgnoreCase))
             {
                 BackColor = Color.Red;
             }
-            if (string.Equals(color, "синий", StringComparison.OrdinalIgnoreCase))
+            else if (string.Equals(color, "синий", StringComparison.OrdinalIgnoreCase))
             {
                 BackColor = Color.Blue;
             }
-
         }
 
         private void createButton_Click(object sender, EventArgs e)
