@@ -8,7 +8,7 @@ namespace BallsWinFormsLibrary
         public MoveBall(Form form) : base(form)
         {
             timer = new Timer();
-            timer.Interval = 10;
+            timer.Interval = 1;
             timer.Tick+=Timer_Tick;
             vx = random.Next(-5, 5);
             vy = random.Next(-5, 5);
@@ -16,8 +16,9 @@ namespace BallsWinFormsLibrary
 
         private void Timer_Tick(object? sender, EventArgs e)
         {
-            Move();
             ReduceBallSize();
+
+            Move();
         }
 
         public void Start()
@@ -45,7 +46,7 @@ namespace BallsWinFormsLibrary
 
         protected virtual void ReduceBallSize()
         {
-            size.Width = size.Height-=1;
+            
         }
     }
 }

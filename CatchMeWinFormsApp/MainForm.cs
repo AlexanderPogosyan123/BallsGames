@@ -33,11 +33,12 @@ namespace CatchMeWinFormsApp
 
         private void ÑreateBallsForLevelChoice(Level levelChoice)
         {
+            int totalBalls = 8;
             switch (levelChoice)
             {
                 case Level.easy:
                     {
-                        for (int i = 0; i < 10; i++)
+                        for (int i = 0; i < totalBalls; i++)
                         {
                             var ball = new EasyBallLevel(this);
                             moveBalls.Add(ball);
@@ -49,7 +50,7 @@ namespace CatchMeWinFormsApp
 
                 case Level.medium:
                     {
-                        for (int i = 0; i < 10; i++)
+                        for (int i = 0; i < totalBalls; i++)
                         {
                             var ball = new MediumBallLevel(this);
                             moveBalls.Add(ball);
@@ -61,7 +62,7 @@ namespace CatchMeWinFormsApp
 
                 case Level.hard:
                     {
-                        for (int i = 0; i < 10; i++)
+                        for (int i = 0; i < totalBalls; i++)
                         {
                             var ball = new HardBallLevel(this);
                             moveBalls.Add(ball);

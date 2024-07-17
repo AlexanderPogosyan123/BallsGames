@@ -15,7 +15,7 @@ namespace CatchMeWinFormsApp
             Clear();
             if (size.Width != 15)
             {
-                base.ReduceBallSize();
+                size.Width = size.Height-=1;
             }
             RandomPositionMoving();
             Show();
