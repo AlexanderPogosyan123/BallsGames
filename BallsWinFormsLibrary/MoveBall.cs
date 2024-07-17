@@ -45,7 +45,7 @@ namespace BallsWinFormsLibrary
 
         protected virtual void ReduceBallSize()
         {
-
+            size.Width = size.Height-=1;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace CatchMeWinFormsApp
             Clear();
             if (size.Width != 30)
             {
-                size.Width = size.Height-=1;
+                base.ReduceBallSize();
             }
             Show();
         }
