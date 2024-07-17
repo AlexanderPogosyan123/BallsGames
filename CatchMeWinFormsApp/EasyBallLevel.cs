@@ -4,6 +4,7 @@ namespace CatchMeWinFormsApp
 {
     internal class EasyBallLevel : MoveBall
     {
+        
         public EasyBallLevel(Form form) : base(form)
         {
             vx = random.Next(-3, 3);

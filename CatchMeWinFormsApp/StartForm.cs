@@ -1,10 +1,25 @@
 ﻿
 namespace CatchMeWinFormsApp
 {
+    public enum Level
+    {
+        easy,
+        medium,
+        hard
+    }
+
+    public enum Color
+    {
+        black,
+        white,
+        red,
+        blue
+    }
     public partial class StartForm : Form
     {
-        public string Color;
-        public string LevelChoice;
+      
+        public Color ColorChoice;
+        public  Level LevelChoice;
         public StartForm()
         {
             InitializeComponent();
@@ -37,8 +52,8 @@ namespace CatchMeWinFormsApp
             }
             else
             {
-                Color = colorsComboBox.Text.Trim();
-                LevelChoice = levelsComboBox.Text.Trim();
+                ColorChoice = (Color)colorsComboBox.SelectedIndex;
+                LevelChoice = (Level)levelsComboBox.SelectedIndex;
             }
             Hide();
         }

@@ -51,7 +51,7 @@
             // colorsComboBox
             // 
             colorsComboBox.FormattingEnabled = true;
-            colorsComboBox.Items.AddRange(new object[] { "Черный", "Белый", "Красный", "Синий" });
+            colorsComboBox.Items.AddRange(new object[] { "черный", "белый", "красный", "синий" });
             colorsComboBox.Location = new Point(97, 75);
             colorsComboBox.Name = "colorsComboBox";
             colorsComboBox.Size = new Size(151, 28);
@@ -73,7 +73,7 @@
             // levelsComboBox
             // 
             levelsComboBox.FormattingEnabled = true;
-            levelsComboBox.Items.AddRange(new object[] { "Легкий", "Средний", "Сложный" });
+            levelsComboBox.Items.AddRange(new object[] { "легкий", "средний", "сложный" });
             levelsComboBox.Location = new Point(530, 75);
             levelsComboBox.Name = "levelsComboBox";
             levelsComboBox.Size = new Size(151, 28);

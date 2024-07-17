@@ -4,6 +4,7 @@ namespace CatchMeWinFormsApp
 {
     public partial class mainForm : Form
     {
+
         private List<MoveBall> moveBalls;
         private StartForm startForm = new StartForm();
         private int ballsCount = 0;
@@ -16,25 +17,25 @@ namespace CatchMeWinFormsApp
         private void MainForm_Load(object sender, EventArgs e)
         {
             startForm.ShowDialog();
-            string color = startForm.Color;
-            ChangeFormBackColor(color);
+            Color colorNum = startForm.ColorChoice;
+            ChangeFormBackColor(colorNum);
 
         }
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
             moveBalls = new List<MoveBall>();
-            string levelChoice = startForm.LevelChoice;
+            Level levelChoice = startForm.LevelChoice;
             —reateBallsForLevelChoice(levelChoice);
             createButton.Enabled = false;
 
         }
 
-        private void —reateBallsForLevelChoice(string levelChoice)
+        private void —reateBallsForLevelChoice(Level levelChoice)
         {
             switch (levelChoice)
             {
-                case "ÀÂ„ÍËÈ":
+                case Level.easy:
                     {
                         for (int i = 0; i < 10; i++)
                         {
@@ -46,7 +47,7 @@ namespace CatchMeWinFormsApp
                         break;
                     }
 
-                case "—Â‰ÌËÈ":
+                case Level.medium:
                     {
                         for (int i = 0; i < 10; i++)
                         {
@@ -58,7 +59,7 @@ namespace CatchMeWinFormsApp
                         break;
                     }
 
-                case "—ÎÓÊÌ˚È":
+                case Level.hard:
                     {
                         for (int i = 0; i < 10; i++)
                         {
@@ -106,25 +107,24 @@ namespace CatchMeWinFormsApp
             }
         }
 
-        private void ChangeFormBackColor(string color)
+        private void ChangeFormBackColor(Color colorNum)
         {
-            if (string.Equals(color, "˜ÂÌ˚È", StringComparison.OrdinalIgnoreCase))
+            switch (colorNum)
             {
-                BackColor = Color.Black;
-                label2.ForeColor = Color.White;
-                ballsCountLabel.ForeColor = Color.White;
-            }
-            else if (string.Equals(color, "·ÂÎ˚È", StringComparison.OrdinalIgnoreCase))
-            {
-                BackColor = Color.White;
-            }
-            else if (string.Equals(color, "Í‡ÒÌ˚È", StringComparison.OrdinalIgnoreCase))
-            {
-                BackColor = Color.Red;
-            }
-            else if (string.Equals(color, "ÒËÌËÈ", StringComparison.OrdinalIgnoreCase))
-            {
-                BackColor = Color.Blue;
+                case Color.black:
+                    base.BackColor = System.Drawing.Color.Black;
+                    label2.ForeColor = System.Drawing.Color.White;
+                    ballsCountLabel.ForeColor = System.Drawing.Color.White;
+                    break;
+                case Color.white:
+                    base.BackColor = System.Drawing.Color.White;
+                    break;
+                case Color.red:
+                    base.BackColor = System.Drawing.Color.Red;
+                    break;
+                case Color.blue:
+                    base.BackColor = System.Drawing.Color.Blue;
+                    break;
             }
         }
     }
