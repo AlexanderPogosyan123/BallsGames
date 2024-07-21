@@ -6,9 +6,8 @@
         public RandomPointBall(Form form) : base(form)
         {
             this.form = form;
-            var x = random.Next(0, form.ClientSize.Width);
-            var y = random.Next(0, form.ClientSize.Height);
-            location = new Point(x, y);
+            centerX = random.Next(LeftSide(), RightSide());
+            centerY = random.Next(TopSide(), DownSide());
         }
     }
 

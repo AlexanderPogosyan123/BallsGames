@@ -81,7 +81,7 @@ namespace CatchMeWinFormsApp
 
                 foreach (var ball in moveBalls)
                 {
-                    if (ball.Consists(e.X, e.Y) && ball.IsMovable())
+                    if (ball.Exists(e.X, e.Y) && ball.IsMovable())
                     {
                         ball.Stop();
                         ballsCount++;

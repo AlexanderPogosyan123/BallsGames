@@ -18,7 +18,6 @@ namespace BallGameWinFormsApp
 
         private void createButton_Click(object sender, EventArgs e)
         {
-
             stopButton.Enabled = false;
             ClearButton.Enabled = false;
             moveBalls = new List<MoveBall>();
@@ -36,7 +35,7 @@ namespace BallGameWinFormsApp
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
-
+          
         }
 
         private void stopButton_Click(object sender, EventArgs e)
