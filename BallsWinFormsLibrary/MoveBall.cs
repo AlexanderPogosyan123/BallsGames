@@ -2,7 +2,7 @@
 
 namespace BallsWinFormsLibrary
 {
-    public class MoveBall : RandomPointBall
+    public abstract class MoveBall : RandomPointBall
     {
         private Timer timer;
         public MoveBall(Form form) : base(form)
@@ -47,10 +47,7 @@ namespace BallsWinFormsLibrary
             Show();
         }
 
-        protected virtual void ReduceBallSize()
-        {
-
-        }
+        protected abstract void ReduceBallSize();
 
         private void Go()
         {
