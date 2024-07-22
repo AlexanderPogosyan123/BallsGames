@@ -6,14 +6,14 @@ namespace CatchMeWinFormsApp
     {
         public HardBallLevel(Form form) : base(form)
         {
-            vx = SetRandomNumber();
-            vy = SetRandomNumber();
-
+            SetRandomSpeed();
+            SetRandomSpeed();
         }
 
-        protected override int SetRandomNumber()
+        protected override void SetRandomSpeed()
         {
-            return random.Next(-15, 15);
+            vx = random.Next(-15, 15);
+            vy = random.Next(-15, 15);
         }
 
         protected override void ReduceBallSize()

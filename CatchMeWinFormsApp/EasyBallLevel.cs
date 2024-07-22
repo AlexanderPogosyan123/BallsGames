@@ -7,13 +7,14 @@ namespace CatchMeWinFormsApp
         
         public EasyBallLevel(Form form) : base(form)
         {
-            vx = SetRandomNumber();
-            vy = SetRandomNumber();
+            SetRandomSpeed();
+            SetRandomSpeed();
 
         }
-        protected override int SetRandomNumber()
+        protected override void SetRandomSpeed()
         {
-            return random.Next(-3, 3);
+            vx = random.Next(-3, 3);
+            vy = random.Next(-3, 3);
         }
         protected override void ReduceBallSize()
         {

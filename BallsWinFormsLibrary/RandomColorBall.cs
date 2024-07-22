@@ -8,13 +8,12 @@ namespace BallsWinFormsLibrary
 
         public RandomColorBall(Form form) : base(form)
         {
-            color = SetRandomColor();
+            SetRandomColor();
         }
 
-        private Brush SetRandomColor()
+        private void SetRandomColor()
         {
-            var color = brushes[random.Next(brushes.Length)];
-            return color;
+             color = brushes[random.Next(brushes.Length)];
         }
     }
 }

@@ -5,12 +5,13 @@ namespace BallsWinFormsLibrary
     {
         public RandomSpeedAndDirectionBall(Form form) : base(form)
         {
-            vx = SetRandomNumber();
-            vy = SetRandomNumber();
+            SetRandomSpeed();
+            SetRandomSpeed();
         }
-        protected virtual int SetRandomNumber()
+        protected virtual void SetRandomSpeed()
         {
-            return random.Next(-5, 5);
+            vx =  random.Next(-5, 5);
+            vy =  random.Next(-5, 5);
         }
     }
 }

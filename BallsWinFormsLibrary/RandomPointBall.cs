@@ -5,15 +5,16 @@
         public RandomPointBall(Form form) : base(form)
         {
             this.form = form;
-            centerX = SetRandomPoint().X;
-            centerY = SetRandomPoint().Y;
+            SetRandomPoint();
         }
 
-        private Point SetRandomPoint()
+        private void SetRandomPoint()
         {
             var x = random.Next(LeftSide(), RightSide());
             var y = random.Next(TopSide(), DownSide());
-            return new Point(x, y);
+            var point =  new Point(x, y);
+            centerX = point.X;
+            centerY = point.Y;
         }
 
     }
