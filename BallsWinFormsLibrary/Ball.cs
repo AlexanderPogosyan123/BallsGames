@@ -12,8 +12,8 @@ namespace BallsWinFormsLibrary
         protected int radius = 25;
         protected Size size;
         protected Brush color = Brushes.Red;
-        protected int vx = 5;
-        protected int vy = 5;
+        protected int vx = 3;
+        protected int vy = 3;
         public Ball(Form form)
         {
             this.form = form;
@@ -38,7 +38,7 @@ namespace BallsWinFormsLibrary
 
         public void Clear()
         {
-           var color = new SolidBrush(form.BackColor);
+            var color = new SolidBrush(form.BackColor);
             Draw(color);
         }
 
@@ -94,14 +94,14 @@ namespace BallsWinFormsLibrary
         protected virtual void Draw(Brush brush)
         {
             var graphics = form.CreateGraphics();
-            Rectangle rectangle = new Rectangle(centerX - radius, centerY -radius, size.Width, size.Height);
+            Rectangle rectangle = new Rectangle(centerX - radius, centerY - radius, size.Width, size.Height);
             graphics.FillEllipse(brush, rectangle);
         }
 
         private void InitializingTimer()
         {
             timer = new Timer();
-            timer.Interval = 5;
+            timer.Interval = 1;
             timer.Tick+=Timer_Tick;
         }
 
@@ -111,8 +111,8 @@ namespace BallsWinFormsLibrary
             Move();
         }
 
-        private void Go()
-         {
+        protected virtual void Go()
+        {
             centerX += vx;
             centerY += vy;
         }
