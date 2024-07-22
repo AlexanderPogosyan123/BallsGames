@@ -21,8 +21,6 @@ namespace BallsWinFormsLibrary
             InitializingTimer();
         }
 
-        
-
         public void Start()
         {
             timer.Enabled = true;
@@ -40,7 +38,7 @@ namespace BallsWinFormsLibrary
 
         public void Clear()
         {
-            color = new SolidBrush(form.BackColor);
+           var color = new SolidBrush(form.BackColor);
             Draw(color);
         }
 

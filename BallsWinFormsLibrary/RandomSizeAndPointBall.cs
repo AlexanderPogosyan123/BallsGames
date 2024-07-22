@@ -11,7 +11,7 @@
         private Size SetRandomSize()
         {
             var height = random.Next(50, 200);
-            var width = size.Height;//bug
+            var width = height;//bug
            
             return new Size(width, height);
         }
