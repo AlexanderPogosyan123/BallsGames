@@ -5,7 +5,7 @@ namespace CatchMeWinFormsApp
     public partial class mainForm : Form
     {
 
-        private List<RandomSizeAndPointBall> moveBalls;
+        private List<RandomSpeedAndDirectionBall> moveBalls;
         private StartForm startForm = new StartForm();
         private int ballsCount = 0;
 
@@ -24,7 +24,7 @@ namespace CatchMeWinFormsApp
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
-            moveBalls = new List<RandomSizeAndPointBall>();
+            moveBalls = new List<RandomSpeedAndDirectionBall>();
             Level levelChoice = startForm.LevelChoice;
             ÑreateBallsForLevelChoice(levelChoice);
             createButton.Enabled = false;

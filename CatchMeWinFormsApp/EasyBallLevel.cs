@@ -2,14 +2,18 @@
 
 namespace CatchMeWinFormsApp
 {
-    internal class EasyBallLevel : RandomSizeAndPointBall
+    internal class EasyBallLevel : RandomSpeedAndDirectionBall
     {
         
         public EasyBallLevel(Form form) : base(form)
         {
-            vx = random.Next(-3, 3);
-            vy = random.Next(-3, 3);
+            vx = SetRandomNumber();
+            vy = SetRandomNumber();
 
+        }
+        protected override int SetRandomNumber()
+        {
+            return random.Next(-3, 3);
         }
         protected override void ReduceBallSize()
         {

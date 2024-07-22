@@ -2,14 +2,20 @@
 
 namespace CatchMeWinFormsApp
 {
-    internal class HardBallLevel : RandomSizeAndPointBall
+    internal class HardBallLevel : RandomSpeedAndDirectionBall
     {
         public HardBallLevel(Form form) : base(form)
         {
-            vx = random.Next(-15, 15);
-            vy = random.Next(-15, 15);
+            vx = SetRandomNumber();
+            vy = SetRandomNumber();
 
         }
+
+        protected override int SetRandomNumber()
+        {
+            return random.Next(-15, 15);
+        }
+
         protected override void ReduceBallSize()
         {
             Clear();
@@ -20,6 +26,7 @@ namespace CatchMeWinFormsApp
             RandomPositionMoving();
             Show();
         }
+
         private void RandomPositionMoving()
         {
             vy = random.Next(-10, 10);

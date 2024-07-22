@@ -8,7 +8,7 @@ namespace BallsWinFormsLibrary
             vx = SetRandomNumber();
             vy = SetRandomNumber();
         }
-        private int SetRandomNumber()
+        protected virtual int SetRandomNumber()
         {
             return random.Next(-5, 5);
         }
