@@ -1,14 +1,21 @@
 ﻿namespace BallsWinFormsLibrary
 {
-    public class RandomPointBall : Ball
+    public class RandomPointBall : RandomColorBall
     {
-        protected Random random = new Random();
         public RandomPointBall(Form form) : base(form)
         {
             this.form = form;
-            centerX = random.Next(LeftSide(), RightSide());
-            centerY = random.Next(TopSide(), DownSide());
+            centerX = SetRandomPoint().X;
+            centerY = SetRandomPoint().Y;
         }
+
+        private Point SetRandomPoint()
+        {
+            var x = random.Next(LeftSide(), RightSide());
+            var y = random.Next(TopSide(), DownSide());
+            return new Point(x, y);
+        }
+
     }
 
 }

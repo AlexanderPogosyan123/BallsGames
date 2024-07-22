@@ -2,7 +2,7 @@
 
 namespace CatchMeWinFormsApp
 {
-    internal class MediumBallLevel : MoveBall
+    internal class MediumBallLevel : RandomSizeAndPointBall
     {
         public MediumBallLevel(Form form) : base(form)
         {

@@ -4,7 +4,7 @@ namespace BallGameWinFormsApp
 {
     public partial class MainForm : Form
     {
-        private List<MoveBall> moveBalls;
+        private List<RandomSizeAndPointBall> moveBalls;
         public MainForm()
         {
             InitializeComponent();
@@ -20,11 +20,11 @@ namespace BallGameWinFormsApp
         {
             stopButton.Enabled = false;
             ClearButton.Enabled = false;
-            moveBalls = new List<MoveBall>();
+            moveBalls = new List<RandomSizeAndPointBall>();
 
             for (int i = 0; i < 10; i++)
             {
-                var ball = new MoveBall(this);
+                var ball = new RandomSizeAndPointBall(this);
                 moveBalls.Add(ball);
                 moveBalls[i].Start();
             }

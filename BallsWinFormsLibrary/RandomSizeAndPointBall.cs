@@ -5,10 +5,15 @@
         public RandomSizeAndPointBall(Form form) : base(form)
         {
             this.form = form;
-            size.Height = random.Next(50, 200);
-            size.Width = size.Height;
-
+            size = SetRandomSize();
         }
 
+        private Size SetRandomSize()
+        {
+            var height = random.Next(50, 200);
+            var width = size.Height;//bug
+           
+            return new Size(width, height);
+        }
     }
 }

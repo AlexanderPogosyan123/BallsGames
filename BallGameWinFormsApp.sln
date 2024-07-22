@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatchMeWinFormsApp", "Catch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BallsWinFormsLibrary", "BallsWinFormsLibrary\BallsWinFormsLibrary.csproj", "{E9EEDA7D-582D-4104-9684-8B14A7A5DB26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillyardBallsWinFormsApp", "BillyardBallsWinFormsApp\BillyardBallsWinFormsApp.csproj", "{A9F5B007-F585-419D-892E-189AB9184B48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E9EEDA7D-582D-4104-9684-8B14A7A5DB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9EEDA7D-582D-4104-9684-8B14A7A5DB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9EEDA7D-582D-4104-9684-8B14A7A5DB26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F5B007-F585-419D-892E-189AB9184B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F5B007-F585-419D-892E-189AB9184B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F5B007-F585-419D-892E-189AB9184B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F5B007-F585-419D-892E-189AB9184B48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

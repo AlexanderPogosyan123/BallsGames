@@ -2,7 +2,7 @@
 
 namespace CatchMeWinFormsApp
 {
-    internal class EasyBallLevel : MoveBall
+    internal class EasyBallLevel : RandomSizeAndPointBall
     {
         
         public EasyBallLevel(Form form) : base(form)
