@@ -3,7 +3,7 @@ using BallsWinFormsLibrary;
 
 namespace BillyardBallsWinFormsApp
 {
-    public class BillyardBall : Ball
+    public class BillyardBall : RandomSpeedAndDirectionBall
     {
         public event EventHandler<HitEventArgs> OnHitted;
         public BillyardBall(MainForm form) : base(form)

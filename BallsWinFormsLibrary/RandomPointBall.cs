@@ -12,9 +12,8 @@
         {
             var x = random.Next(LeftSide(), RightSide());
             var y = random.Next(TopSide(), DownSide());
-            var point =  new Point(x, y);
-            centerX = point.X;
-            centerY = point.Y;
+            centerX = x;
+            centerY = y;
         }
 
     }

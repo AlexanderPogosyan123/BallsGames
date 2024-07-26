@@ -9,9 +9,12 @@ namespace BillyardBallsWinFormsApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            BillyardBall billyardBall = new BillyardBall(this);
-            billyardBall.Start();
-            billyardBall.OnHitted+=BillyardBall_OnHitted;
+            for (int i = 0; i < 10; i++)
+            {
+                BillyardBall billyardBall = new BillyardBall(this);
+                billyardBall.Start();
+                billyardBall.OnHitted+=BillyardBall_OnHitted;
+            }
         }
 
         private void BillyardBall_OnHitted(object? sender, HitEventArgs e)
