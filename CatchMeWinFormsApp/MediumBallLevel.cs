@@ -2,9 +2,15 @@
 
 namespace CatchMeWinFormsApp
 {
-    internal class MediumBallLevel : MoveBall
+    internal class MediumBallLevel : RandomSpeedAndDirectionBall
     {
         public MediumBallLevel(Form form) : base(form)
+        {
+            SetRandomSpeed();
+            SetRandomSpeed();
+        }
+
+        protected override void SetRandomSpeed()
         {
             vx = random.Next(-5, 5);
             vy = random.Next(-5, 5);

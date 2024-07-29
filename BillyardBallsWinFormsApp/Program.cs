@@ -1,4 +1,4 @@
-namespace CatchMeWinFormsApp
+namespace BillyardBallsWinFormsApp
 {
     internal static class Program
     {

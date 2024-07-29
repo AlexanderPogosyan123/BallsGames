@@ -1,62 +1,122 @@
-﻿namespace BallsWinFormsLibrary
+﻿using Timer = System.Windows.Forms.Timer;
+
+namespace BallsWinFormsLibrary
 {
     public class Ball
     {
+        private Timer timer;
         //Это уже другой объект, нам нужен именно наш объект формочки чтобы на ней нарисовать шар(из-за этого мы передаем его в конструкторе)
         protected Form form;
-        //установка значений по умолчанию
-        protected Point location = new Point(100, 100);
-        private Random random = new Random();
-
-        protected Size size = new Size(50, 50);
-        private Brush[] brushes = { Brushes.Brown, Brushes.Orange, Brushes.Gray, Brushes.Purple };
-
-        private Brush brush;
-        private Brush color;
-        protected int vx = 5;
-        protected int vy = 5;
+        protected int centerX = 100;
+        protected int centerY = 100;
+        protected int radius = 25;
+        protected Size size;
+        protected Brush color = Brushes.Red;
+        protected int vx = 3;
+        protected int vy = 3;
         public Ball(Form form)
         {
             this.form = form;
-            brush = brushes[random.Next(brushes.Length)];
-            color = brush;
+            size = new Size(radius*2, radius*2);
+            InitializingTimer();
+        }
+
+        public void Start()
+        {
+            timer.Enabled = true;
+        }
+
+        public void Stop()
+        {
+            timer.Stop();
         }
 
         public void Show()
         {
-            //создал массив возможных цветов
-            //рандомно генерю цвет исходя из массива цветов
-            var graphics = form.CreateGraphics();
-            //прямоугольник создается для площади где будет рисоваться шар
-            Rectangle rectangle = new Rectangle(location, size);
-            graphics.FillEllipse(color, rectangle);
+            Draw(color);
         }
 
-        private void Go()
-        {
-            location.X+=vx;
-            location.Y+=vy;
-        }
         public void Clear()
         {
-            brush = new SolidBrush(form.BackColor);
-            //рандомно генерю цвет исходя из массива цветов
-            var graphics = form.CreateGraphics();
-            //прямоугольник создается для площади где будет рисоваться шар
-            Rectangle rectangle = new Rectangle(location, size);
-            graphics.FillEllipse(brush, rectangle);
+            var color = new SolidBrush(form.BackColor);
+            Draw(color);
         }
 
-        public void Move()
+        public bool IsMovable()
+        {
+            return timer.Enabled;
+        }
+
+        public int LeftSide()
+        {
+            return radius;
+        }
+
+        public int TopSide()
+        {
+            return radius;
+        }
+
+        public int RightSide()
+        {
+            return form.ClientSize.Width - radius;
+        }
+
+        public int DownSide()
+        {
+            return form.ClientSize.Height - radius;
+        }
+
+        public bool OnForm()
+        {
+            return centerX >= LeftSide() && centerY >= TopSide() && centerX <= RightSide() && centerY <= DownSide();
+        }
+
+
+        public bool Exists(int pointX, int pointY)
+        {
+            return (centerX - pointX)* (centerX - pointX) + (centerY - pointY)*(centerY - pointY) <=radius*radius;
+        }
+
+        protected void Move()
         {
             Clear();
             Go();
             Show();
         }
 
-        public bool OnForm()
+        protected virtual void ReduceBallSize()
         {
-            return location.X > 0 && location.Y > 0 && location.X < form.ClientSize.Width - size.Width && location.Y < form.ClientSize.Height - size.Height;
+
         }
+
+
+        protected virtual void Draw(Brush brush)
+        {
+            var graphics = form.CreateGraphics();
+            Rectangle rectangle = new Rectangle(centerX - radius, centerY - radius, size.Width, size.Height);
+            graphics.FillEllipse(brush, rectangle);
+        }
+
+        private void InitializingTimer()
+        {
+            timer = new Timer();
+            timer.Interval = 1;
+            timer.Tick+=Timer_Tick;
+        }
+
+        private void Timer_Tick(object? sender, EventArgs e)
+        {
+            ReduceBallSize();
+            Move();
+        }
+
+        protected virtual void Go()
+        {
+            centerX += vx;
+            centerY += vy;
+        }
+
+
     }
 }

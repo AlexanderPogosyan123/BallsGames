@@ -2,14 +2,14 @@ using BallsWinFormsLibrary;
 
 namespace CatchMeWinFormsApp
 {
-    public partial class mainForm : Form
+    public partial class MainForm : Form    
     {
 
-        private List<MoveBall> moveBalls;
+        private List<RandomSpeedAndDirectionBall> moveBalls;
         private StartForm startForm = new StartForm();
         private int ballsCount = 0;
 
-        public mainForm()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace CatchMeWinFormsApp
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
-            moveBalls = new List<MoveBall>();
+            moveBalls = new List<RandomSpeedAndDirectionBall>();
             Level levelChoice = startForm.LevelChoice;
             ÑreateBallsForLevelChoice(levelChoice);
             createButton.Enabled = false;
@@ -76,12 +76,13 @@ namespace CatchMeWinFormsApp
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
+            e.
             if (moveBalls != null)
             {
 
                 foreach (var ball in moveBalls)
                 {
-                    if (ball.Consists(e.X, e.Y) && ball.IsMovable())
+                    if (ball.Exists(e.X, e.Y) && ball.IsMovable())
                     {
                         ball.Stop();
                         ballsCount++;
