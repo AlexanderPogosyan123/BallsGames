@@ -2,14 +2,14 @@ using BallsWinFormsLibrary;
 
 namespace CatchMeWinFormsApp
 {
-    public partial class mainForm : Form
+    public partial class MainForm : Form    
     {
 
         private List<RandomSpeedAndDirectionBall> moveBalls;
         private StartForm startForm = new StartForm();
         private int ballsCount = 0;
 
-        public mainForm()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -76,6 +76,7 @@ namespace CatchMeWinFormsApp
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
+            e.
             if (moveBalls != null)
             {
 
